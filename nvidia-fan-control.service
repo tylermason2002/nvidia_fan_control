@@ -1,0 +1,22 @@
+[Unit]
+Description=NVIDIA Aggressive Fan Control for AI Workloads
+After=nvidia-persistenced.service
+Wants=nvidia-persistenced.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/nvidia-fan-control/nvidia-fan-control.py --mode quiet --interval 1
+ExecStop=/bin/kill -SIGTERM $MAINPID
+Restart=on-failure
+RestartSec=5
+
+# Run as root (required for fan control)
+User=root
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=nvidia-fan-control
+
+[Install]
+WantedBy=multi-user.target
