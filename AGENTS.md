@@ -13,7 +13,7 @@ Python package providing a headless NVIDIA GPU fan control daemon (`nvidia-fan-c
 
 ## Package Structure
 
-```
+```text
 main.py                         # symlink → src/nvidia_fan_control/main.py
 src/nvidia_fan_control/
     __init__.py                 # re-exports main; entry point: nvidia-fan-control
