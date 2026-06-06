@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(prek:*)",
+      "Bash(pytest:*)",
+      "Bash(python:*)",
+      "Bash(ruff:*)",
+      "Bash(uv:*)"
+    ],
+    "deny": [ ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git diff --name-only HEAD | xargs -r prek run --files"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git diff --name-only HEAD | xargs -r prek run --files"
+          }
+        ]
+      }
+    ]
+  }
+}
