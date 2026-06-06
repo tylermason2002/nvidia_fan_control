@@ -25,12 +25,12 @@ log = logging.getLogger(__name__)
 # Quiet idle, aggressive ramp curve (DEFAULT)
 # Matches NVIDIA default at idle, ramps hard above 45°C
 QUIET_CURVE = [
-    (40, 30),   # ≤40°C -> 30% (match NVIDIA default idle)
-    (45, 40),   # 45°C -> 40% (gentle start)
-    (50, 55),   # 50°C -> 55% (starting to work)
-    (55, 75),   # 55°C -> 75% (ramping hard)
-    (60, 90),   # 60°C -> 90% (aggressive)
-    (65, 100),  # 65°C -> 100% (full blast)
+    (40, 20),   # ≤40°C -> 20% (near-silent idle)
+    (50, 30),   # 50°C -> 30%
+    (60, 45),   # 60°C -> 45%
+    (70, 65),   # 70°C -> 65%
+    (75, 80),   # 75°C -> 80%
+    (80, 100),  # 80°C -> 100% (thermal protection)
 ]
 
 # Aggressive fan curve: (temp_threshold, fan_speed_percent)
