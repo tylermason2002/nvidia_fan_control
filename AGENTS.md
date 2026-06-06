@@ -2,6 +2,11 @@
 
 This file provides guidance to AI agents when working with code in this repository.
 
+## Commit Rules
+
+- Do **not** add `Co-Authored-By` or any co-author/co-contributor trailers to commits.
+- Only `pythoninthegrass` should appear as author.
+
 ## Overview
 
 Python package providing a headless NVIDIA GPU fan control daemon (`nvidia-fan-control`) and an optional vLLM load-testing utility (`stress-vllm`). Uses `pynvml` (NVML bindings) to set fan speeds — no X11/display required. Requires root.
