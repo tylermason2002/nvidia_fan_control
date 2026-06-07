@@ -1,16 +1,4 @@
-# Fix without reporting on leftover violations
-fix-only = true
 
-src = ["src"]
-
-# Enumerate all fixed violations
-show-fixes = true
-
-# Indent width (default: 4)
-indent-width = 4
-
-# Black (default: 88)
-line-length = 130
 
 # Exclude a variety of commonly ignored directories.
 exclude = [
